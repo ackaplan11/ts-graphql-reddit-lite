@@ -1,17 +1,17 @@
-import { PrismaClient } from '@prisma/client'
+import express from 'express'
+//import {ApolloServer} from 'apollo-server-express'
+//import { buildSchema } from 'graphql'
 
-const prisma = new PrismaClient()
 
 async function main() {
-    const allUsers = await prisma.user.findMany()
-    console.dir(allUsers, { depth: null } )
-    console.log("hello eart")
+    //const schema = await buildSchema({})
+    //const apolloServer = new ApolloServer({ schema })
+    const app = express()
+    //apolloServer.applyMiddleware({ app })
+    app.listen(4000)
 }
 
 main()
   .catch((e) => {
     throw e
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
   })
